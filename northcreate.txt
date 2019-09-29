@@ -1,0 +1,41 @@
+CREATE TABLE COURSE
+(cid NUMBER(3) CONSTRAINT course_cid_pk PRIMARY KEY,
+callid CHAR(7) CONSTRAINT course_callid_nn NOT NULL,
+cname VARCHAR2(30) CONSTRAINT course_cname_nn NOT NULL,
+ccredit CHAR(2) CONSTRAINT course_ccredit_nn NOT NULL);
+
+CREATE TABLE TERM
+(termid NUMBER(2) CONSTRAINT term_termid_nn NOT NULL,
+tdesc VARCHAR2(11) CONSTRAINT term_tdesc_nn NOT NULL,
+status VARCHAR2(6) CONSTRAINT term_status_nn NOT NULL);
+
+CREATE TABLE LOCATION
+(locid NUMBER(5) CONSTRAINT location_locid_pk PRIMARY KEY,
+bldg_code VARCHAR(10) CONSTRAINT location_bldg_code_nn NOT NULL,
+room VARCHAR(6) CONSTRAINT location_room_nn NOT NULL,
+capapcity NUMBER(5) CONSTRAINT location_capacity_nn NOT NULL);
+
+CREATE TABLE FACULTY
+(fid NUMBER(3) CONSTRAINT faculty_fid_pk PRIMARY KEY,
+flname VARCHAR2(20) CONSTRAINT faculty_flname_nn NOT NULL,
+ffname VARCHAR2(20) CONSTRAINT faculty_ffname_nn NOT NULL,
+fmi CHAR(1) CONSTRAINT faculty_fmi_nn NOT NULL,
+locid NUMBER(5) CONSTRAINT faculty_locid_fk REFERENCES LOCATION (locid),
+fphone CHAR(10) CONSTRAINT faculty_fphone_nn NOT NULL,
+frank CHAR(4) CONSTRAINT faculty_frank_nn NOT NULL,
+fpin CHAR(4) CONSTRAINT faculty_fpin_nn NOT NULL);
+
+CREATE TABLE STUDENT
+(sid NUMBER(4) CONSTRAINT student_sid_pk PRIMARY KEY,
+slname VARCHAR2(20) CONSTRAINT student_slname_nn NOT NULL,
+sfname VARCHAR2(20) CONSTRAINT student_fname_nn NOT NULL,
+smi CHAR(1) CONSTRAINT student_smi_nn NOT NULL,
+sadd VARCHAR2(20) CONSTRAINT student_sadd_nn NOT NULL,
+scity VARCHAR2(20) CONSTRAINT student_scity_nn NOT NULL,
+sstate CHAR(2) CONSTRAINT student_sstate_nn NOT NULL,
+szip CHAR(5) CONSTRAINT student_szip_nn NOT NULL,
+sphone CHAR(10) CONSTRAINT student_sphone_nn NOT NULL,
+sclass CHAR(2) CONSTRAINT student_sclass_nn NOT NULL,
+sdob CHAR(8) CONSTRAINT student_sdob_nn NOT NULL,
+spin CHAR(4) CONSTRAINT student_spin_nn NOT NULL,
+fid NUMBER(3) CONSTRAINT student_fid_fk REFERENCES FACULTY(fid));

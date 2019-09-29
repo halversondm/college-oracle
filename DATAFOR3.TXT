@@ -1,0 +1,110 @@
+Note: Data for all tables is included. Data as presented as some anomalies that you will need to resolve. This is part of the
+assignment. You may rearrange the data, but you must include all the data presented below. If you make changes to the table
+structures or the constraints, turn in your changes as part of this assignment.
+
+
+INSERT INTO FACULTY VALUES
+('098-76-5432', 'Leonad', 'Vince', '123 main Street', 'Seattle', 'WA', '98076', '01-Apr-90', 'ACC', 'Asst', '45000', '654-32-1098');
+INSERT INTO FACULTY VALUES
+('543-21-0987', 'Emmanuel', 'Victoria', 'R.R. 3', 'Bothell', 'WA', '98011-2242', '01-Sep-91', 'FIN', 'Prof', '65000');
+INSERT INTO FACULTY VALUES
+('765-43-2109', 'Mason', 'Nikki', '89 Laurel's Way', 'Seattle', 'WA', '98076', '15-Jul-98', 'MIS', 'Asst.', '50000');
+INSERT INTO FACULTY VALUES
+('876-54-3210', 'Smith', 'Christopher', 'Ryan's Court', 'Markham', 'WA', '98114-1332', '12-Oct-98', 'FIN', 'Prof', '67000', '543-21-0987');
+INSERT INTO FACULTY VALUES
+('654-32-1098', 'James', 'Leonard', 'Bellevue', 'WA', '98015-9945', '01-Jun-92', 'ACC', 'Assc', '56000'); 
+
+INSERT INTO DEPARTMENT VALUES
+('MIS', 'Management Information Systems');
+INSERT INTO DEPARTMENT VALUES
+('ACC', 'Accounting');
+INSERT INTO DEPARTMENT VALUES
+('FIN', 'Finance');
+
+
+INSERT INTO CATALOG VALUES
+('IS320', 'Fundamentals of Business', '3');
+INSERT INTO CATALOG VALUES
+('IS460', 'Systems Analysis', '3');
+INSERT INTO CATALOG VALUES
+('IS 470', 'Business Data Communications', '3');
+INSERT INTO CATALOG VALUES
+('IS480', 'Database Fundamentals', '4');
+INSERT INTO CATALOG VALUES
+('AC001', 'Principles of Accounting I', '3');
+INSERT INTO CATALOG VALUES
+('AC002', 'Principles of Accounting II', '3');
+INSERT INTO CATALOG VALUES
+('FN100', 'Financial Management', '4');
+INSERT INTO CATALOG VALUES
+('FN101', 'Audit Control', '4');
+
+INSERT INTO MAJOR VALUES
+('CISM', 'Computer IS Management, MIS');
+INSERT INTO MAJOR VALUES
+('EUCS', 'End User Computing Support, MIS');
+INSERT INTO MAJOR VALUES
+('FINC', 'Finance, FIN');
+INSERT INTO MAJOR VALUES
+('ACCT', 'Accounting, ACC');
+
+INSERT INTO Student VALUES
+('111111111', 'Homer', 'Wells', '99 Express Drive', 'Seattle', 'WA', '98121-1111', 'CISM', 'JR', '3.76');
+INSERT INTO Student VALUES
+('222222222', 'Bob', 'Norbert', '27 Grantham Hall', 'Seattle', 'WA', '98011-2121', 'FINC', 'SR', '2.79');
+INSERT INTO Student VALUES
+('333333333', 'Sally', 'Kendall', '2167 Main', 'Seattle', 'WA', '98123-2333', 'ACCT', 'SO', '3.00');
+INSERT INTO Student VALUES
+('444444444', 'Joe', 'Kendall', '2167 Main', 'Seattle', 'WA', '98123-2333', 'EUCS', '3.61');
+INSERT INTO Student VALUES
+('555555555', 'Mary', 'Roberts', '194 Grantham Hall', 'Seattle', 'WA', '98011-2121', 'CISM', 'FR', '2.00');
+INSERT INTO Student VALUES
+('666666666', 'Mariah', 'Dodge','CISM', 'GR', '3.90');
+
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS320', '01', 'Fall', '1999', 'BUS111', '10:00', 'MWF', '098-76-5432');
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS320', '02', 'Fall', '1999', 'BUS212', '1:00', 'MWF');
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS320', '03', 'Spring', '2000', 'BUS111', '11:00', 'MWF', '765-43-2109');
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS320', '04', 'Spring', '2000', 'BUS212', '1:00', 'MWF', '098-76-5432');
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS460', '01', 'Fall', '1999', 'BUS113', '9:00', 'MWF', '098-76-5432');
+INSERT INTO COURSE_OFFERINGS VALUES
+('IS480', '01', 'Fall', '1999', 'BUS 213', '2:00', 'TTh', '765-43-2109');
+INSERT INTO COURSE_OFFERINGS VALUES
+('AC001', '01', 'Fall', '1999', 'BUS115', '9:00', 'MWF', '654-32-1098');
+INSERT INTO COURSE_OFFERINGS VALUES
+('AC002', '01', 'Fall', '1999', 'BUS117', '3:00', 'TTh', '654-32-1098');
+INSERT INTO COURSE_OFFERINGS VALUES
+('FN100', '01', 'Fall', '1999', 'BUS 119', '8:00', 'MWF', '543-21-0987');
+
+INSERT INTO ENROLLMENT VALUES(
+'IS320', '01', '111111111', '4.00');
+INSERT INTO ENROLLMENT VALUES (
+'IS320', '01', '222222222', '1.60');
+INSERT INTO ENROLLMENT VALUES (
+'IS320', '02', '333333333'. '2.95');
+INSERT INTO ENROLLMENT VALUES (
+'IS320', '02', '444444444', '3.69');
+INSERT INTO ENROLLMENT VALUES (
+'IS320', '02', '555555555', '2.91');
+INSERT INTO ENROLLMENT VALUES (
+'IS460', '01', '111111111', '3.16');
+INSERT INTO ENROLLMENT VALUES (
+'IS460', '01', '666666666', '3.82');
+INSERT INTO ENROLLMENT VALUES (
+'AC001', '01', '111111111', '2.80');
+INSERT INTO ENROLLMENT VALUES (
+'AC001', '01', '222222222', '1.96');
+INSERT INTO ENROLLMENT VALUES (
+'AC001', '01', '555555555', '3.90');
+INSERT INTO ENROLLMENT VALUES (
+'AC002', '01', '444444444', '3.26');
+INSERT INTO ENROLLMENT VALUES (
+'FN001', '01', '222222222', '2.90');
+INSERT INTO ENROLLMENT VALUES (
+'FN001', '01', '333333333', '3.96');
+INSERT INTO ENROLLMENT VALUES (
+'IS320', '03', '666666666');

@@ -1,0 +1,135 @@
+start e:\oracle8\prjpart3.sql
+
+FFNAME                         FLNAME                                                               
+------------------------------ ------------------------------                                       
+Vince                          Leonad                                                               
+Christopher                    Smith                                                                
+
+
+CCOURS CDESC                                                CCREDIT                                 
+------ -------------------------------------------------- ---------                                 
+IS 470 Business Data Communications                               3                                 
+IS320  Fundamentals of Business                                   3                                 
+IS460  Systems Analysis                                           3                                 
+IS480  Database Fundamentals                                      4                                 
+
+
+CCOURS CDESC                                                                                        
+------ --------------------------------------------------                                           
+AC001  Principles of Accounting I                                                                   
+AC002  Principles of Accounting II                                                                  
+FN100  Financial Management                                                                         
+IS320  Fundamentals of Business                                                                     
+IS460  Systems Analysis                                                                             
+IS480  Database Fundamentals                                                                        
+
+6 rows selected.
+
+
+FDEPT  FRANK AVG(FSALARY)                                                                           
+------ ----- ------------                                                                           
+ACC    Assc         56000                                                                           
+ACC    Asst         45000                                                                           
+FIN    Prof         66000                                                                           
+MIS    Asst.        50000                                                                           
+
+
+CCOURS CDESC                                              FFNAME                                    
+------ -------------------------------------------------- ------------------------------            
+FLNAME                                                                                              
+------------------------------                                                                      
+IS480  Database Fundamentals                              Nikki                                     
+Mason                                                                                               
+                                                                                                    
+IS320  Fundamentals of Business                           Vince                                     
+Leonad                                                                                              
+                                                                                                    
+IS460  Systems Analysis                                   Vince                                     
+Leonad                                                                                              
+                                                                                                    
+
+
+SMAJ AVG(STUDENT.SGPA)                                                                              
+---- -----------------                                                                              
+ACCT                 3                                                                              
+CISM              3.22                                                                              
+EUCS              3.61                                                                              
+FINC              2.79                                                                              
+
+
+COUNT(COURSENUM) COUNT(DISTINCTCOURSENUM)                                                           
+---------------- ------------------------                                                           
+               7                        6                                                           
+               2                        1                                                           
+
+
+AVG(SGPA)                                                                                           
+---------                                                                                           
+     3.76                                                                                           
+
+
+MAX(SGPA) MIN(SGPA)                                                                                 
+--------- ---------                                                                                 
+        3         3                                                                                 
+      3.9         2                                                                                 
+     3.61      3.61                                                                                 
+     2.79      2.79                                                                                 
+
+
+SFNAME                         SLNAME                         COURSE COTERM COYEAR    COROOM        
+------------------------------ ------------------------------ ------ ------ --------- -------       
+COSSN                                                                                               
+-----------                                                                                         
+Homer                          Wells                          IS480  Fall   01-DEC-99 BUS 213       
+765-43-2109                                                                                         
+                                                                                                    
+Bob                            Norbert                        IS480  Fall   01-DEC-99 BUS 213       
+765-43-2109                                                                                         
+                                                                                                    
+Sally                          Kendall                        IS320  Fall   01-DEC-99 BUS111        
+098-76-5432                                                                                         
+                                                                                                    
+Joe                            Kendall                        IS320  Fall   01-DEC-99 BUS111        
+098-76-5432                                                                                         
+                                                                                                    
+Mary                           Roberts                        IS320  Fall   01-DEC-99 BUS111        
+098-76-5432                                                                                         
+                                                                                                    
+Mariah                         Dodge                          IS320  Fall   01-DEC-99 BUS212        
+                                                                                                    
+                                                                                                    
+Mariah                         Dodge                          IS320  Spring 01-DEC-00 BUS212        
+
+SFNAME                         SLNAME                         COURSE COTERM COYEAR    COROOM        
+------------------------------ ------------------------------ ------ ------ --------- -------       
+COSSN                                                                                               
+-----------                                                                                         
+098-76-5432                                                                                         
+                                                                                                    
+Homer                          Wells                          AC001  Fall   01-DEC-99 BUS115        
+654-32-1098                                                                                         
+                                                                                                    
+Bob                            Norbert                        AC001  Fall   01-DEC-99 BUS115        
+654-32-1098                                                                                         
+                                                                                                    
+Mary                           Roberts                        AC001  Fall   01-DEC-99 BUS115        
+654-32-1098                                                                                         
+                                                                                                    
+Joe                            Kendall                        AC002  Fall   01-DEC-99 BUS117        
+654-32-1098                                                                                         
+                                                                                                    
+Bob                            Norbert                        FN100  Fall   01-DEC-99 BUS 119       
+543-21-0987                                                                                         
+                                                                                                    
+Sally                          Kendall                        FN100  Fall   01-DEC-99 BUS 119       
+543-21-0987                                                                                         
+
+SFNAME                         SLNAME                         COURSE COTERM COYEAR    COROOM        
+------------------------------ ------------------------------ ------ ------ --------- -------       
+COSSN                                                                                               
+-----------                                                                                         
+                                                                                                    
+
+13 rows selected.
+
+SQL> 

@@ -1,0 +1,132 @@
+SELECT * FROM BACKORDER WHERE DATE_RECEIVED IS NULL;
+
+BACKORDERID    SHIPID     INVID DATE_EXPE QUANTITY_EXPECTED DATE_RECE QUANTITY_RECEIVED             
+----------- --------- --------- --------- ----------------- --------- -----------------             
+          2       218     11847 15-SEP-01                50                                         
+          3       218     11847 15-SEP-01                50                                         
+
+SQL> 
+SQL> SELECT DISTINCT CATEGORY FROM ITEM;
+
+CATEGORY                                                                                            
+-------------------------                                                                           
+Children's Clothing                                                                                 
+Men's Clothing                                                                                      
+Outdoor Gear                                                                                        
+Women's Clothing                                                                                    
+
+SQL> 
+SQL> SELECT ROUND(CURR_PRICE,0) FROM INVENTORY;
+
+ROUND(CURR_PRICE,0)                                                                                 
+-------------------                                                                                 
+                260                                                                                 
+                260                                                                                 
+                 30                                                                                 
+                 30                                                                                 
+                 30                                                                                 
+                 30                                                                                 
+                 30                                                                                 
+                 30                                                                                 
+                 60                                                                                 
+                 60                                                                                 
+                 60                                                                                 
+                 60                                                                                 
+                 60                                                                                 
+                 60                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+                 16                                                                                 
+
+ROUND(CURR_PRICE,0)                                                                                 
+-------------------                                                                                 
+                 16                                                                                 
+                200                                                                                 
+                200                                                                                 
+                210                                                                                 
+                210                                                                                 
+
+26 rows selected.
+
+SQL> 
+SQL> SELECT AVG(CAPACITY) FROM LOCATION WHERE BLDG_CODE = 'LIB';
+
+AVG(CAPACITY)                                                                                       
+-------------                                                                                       
+            1                                                                                       
+
+SQL> 
+SQL> SELECT SUM(CAPACITY) FROM LOCATION WHERE BLDG_CODE = 'LIB' OR BLDG_CODE = 'CR';
+
+SUM(CAPACITY)                                                                                       
+-------------                                                                                       
+          262                                                                                       
+
+SQL> 
+SQL> SELECT SFNAME, SLNAME, SMI FROM STUDENT WHERE SMI IS NULL;
+
+SFNAME                         SLNAME                         S                                     
+------------------------------ ------------------------------ -                                     
+Daniel                         Black                                                                
+
+SQL> 
+SQL> SELECT STUDENT.SFNAME, STUDENT.SLNAME, STUDENT.FID FROM STUDENT, FACULTY WHERE STUDENT.FID = FACULTY.FID AND (FACULTY.FLNAME = 'Cox' AND FACULTY.FFNAME = 'Kim');
+
+SFNAME                         SLNAME                               FID                             
+------------------------------ ------------------------------ ---------                             
+Sarah                          Miller                                 1                             
+Brian                          Umato                                  1                             
+Daniel                         Black                                  1                             
+
+SQL> 
+SQL> SELECT SUM(COURSE_SECTION.CURRENRL) FROM COURSE_SECTION, FACULTY WHERE COURSE_SECTION.FID = FACULTY.FID AND (FACULTY.FLNAME = 'Blanchard' AND FACULTY.FFNAME = 'John');
+
+SUM(COURSE_SECTION.CURRENRL)                                                                        
+----------------------------                                                                        
+                         237                                                                        
+
+SQL> 
+SQL> SELECT LOCATION.BLDG_CODE, LOCATION.ROOM FROM LOCATION, FACULTY, COURSE_SECTION WHERE (LOCATION.LOCID = FACULTY.LOCID AND COURSE_SECTION.TERMID = '6')
+  2  UNION
+  3  SELECT LOCATION.BLDG_CODE, LOCATION.ROOM FROM LOCATION, COURSE_SECTION WHERE (LOCATION.LOCID = COURSE_SECTION.LOCID AND COURSE_SECTION.TERMID = '6');
+
+BLDG_CODE  ROOM                                                                                     
+---------- ------                                                                                   
+BUS        105                                                                                      
+BUS        402                                                                                      
+BUS        404                                                                                      
+BUS        424                                                                                      
+BUS        433                                                                                      
+CR         101                                                                                      
+LIB        217                                                                                      
+LIB        222                                                                                      
+
+8 rows selected.
+
+SQL> 
+SQL> DROP VIEW TERM_VIEW;
+
+View dropped.
+
+SQL> 
+SQL> CREATE VIEW TERM_VIEW AS
+  2  SELECT COURSE.CALLID, COURSE_SECTION.SECNUM, COURSE_SECTION.DAY, COURSE_SECTION.TIME, LOCATION.BLDG_CODE, LOCATION.ROOM
+  3  FROM COURSE, COURSE_SECTION, LOCATION WHERE COURSE_SECTION.TERMID = '6'
+  4  AND COURSE_SECTION.LOCID = LOCATION.LOCID AND COURSE_SECTION.CID = COURSE.CID;
+
+View created.
+
+SQL> 
+SQL> SELECT * FROM TERM_VIEW;
+
+CALLID        SECNUM DAY        TIME      BLDG_CODE  ROOM                                           
+---------- --------- ---------- --------- ---------- ------                                         
+MIS 101            1 M-F        01-NOV-99 CR         101                                            
+MIS 301            1 M-F        01-NOV-99 BUS        404                                            
+MIS 441            1 M-F        01-NOV-99 BUS        105                                            
+
+SQL> 

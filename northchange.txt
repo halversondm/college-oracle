@@ -1,0 +1,17 @@
+ALTER TABLE STUDENT
+ADD(permadd VARCHAR2(30) CONSTRAINT student_permadd_nn NOT NULL,
+permcity VARCHAR2(30) CONSTRAINT student_permcity_nn NOT NULL,
+permstate CHAR(2) CONSTRAINT student_permstate_nn NOT NULL,
+permzip VARCHAR2(9) CONSTRAINT student_permzip_nn NOT NULL,
+permphone VARCHAR2(10));
+
+ALTER TABLE COURSE
+MODIFY(ccredit CHAR(2) DEFAULT '3');
+
+SELECT table_name FROM user_tables;
+
+DESCRIBE STUDENT;
+DESCRIBE FACULTY;
+DESCRIBE LOCATION;
+DESCRIBE TERM;
+DESCRIBE COURSE;

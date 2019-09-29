@@ -1,0 +1,9 @@
+Part 4 of the Project--Forms and Reports
+
+   1.Create a single table data entry form for students and faculty with appropriate column captions and form title (5 pts. each) 
+   2.Create a master detail form for catalog and course offering. (10 pts.) 
+   3.Create a report showing student information by major. (10 pts.) 
+   4.Create a report showing faculty by rank. (10 pts.) 
+
+Hand in disk with executable files and run-time files. Hand it printouts of one example of each form
+and report with data. 

@@ -1,0 +1,203 @@
+ALTER TABLE STUDENT
+  2  ADD(permadd VARCHAR2(30) CONSTRAINT student_permadd_nn NOT NULL,
+  3  permcity VARCHAR2(30) CONSTRAINT student_permcity_nn NOT NULL,
+  4  permstate CHAR(2) CONSTRAINT student_permstate_nn NOT NULL,
+  5  permzip VARHCHAR2(9) CONSTRAINT student_permzip_nn NOT NULL,
+  6  permphone VARCHAR2(10) CONSTRAINT student_permphone);
+permzip VARHCHAR2(9) CONSTRAINT student_permzip_nn NOT NULL,
+                 *
+ERROR at line 5:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> ALTER TABLE COURSE
+  2  MODIFY(ccredit CHAR(2) DEFAULT "3");
+MODIFY(ccredit CHAR(2) DEFAULT "3")
+                               *
+ERROR at line 2:
+ORA-00984: column not allowed here 
+
+
+SQL> 
+SQL> SELECT table_name FROM user_tables;
+
+TABLE_NAME                                                                                          
+------------------------------                                                                      
+BACKORDER                                                                                           
+COLOR                                                                                               
+COURSE                                                                                              
+CUSTOMER                                                                                            
+CUST_ORDER                                                                                          
+FACULTY                                                                                             
+INVENTORY                                                                                           
+ITEM                                                                                                
+LOCATION                                                                                            
+ORDERLINE                                                                                           
+ORDERSOURCE                                                                                         
+SHIPPING                                                                                            
+STUDENT                                                                                             
+TERM                                                                                                
+
+14 rows selected.
+
+SQL> 
+SQL> DESCRIBE STUDENT;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ SID                             NOT NULL NUMBER(4)
+ SLNAME                          NOT NULL VARCHAR2(20)
+ SFNAME                          NOT NULL VARCHAR2(20)
+ SMI                             NOT NULL CHAR(1)
+ SADD                            NOT NULL VARCHAR2(20)
+ SCITY                           NOT NULL VARCHAR2(20)
+ SSTATE                          NOT NULL CHAR(2)
+ SZIP                            NOT NULL CHAR(5)
+ SPHONE                          NOT NULL CHAR(10)
+ SCLASS                          NOT NULL CHAR(2)
+ SDOB                            NOT NULL CHAR(8)
+ SPIN                            NOT NULL CHAR(4)
+ FID                                      NUMBER(3)
+
+SQL> DESCRIBE FACULTY;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ FID                             NOT NULL NUMBER(3)
+ FLNAME                          NOT NULL VARCHAR2(20)
+ FFNAME                          NOT NULL VARCHAR2(20)
+ FMI                             NOT NULL CHAR(1)
+ LOCID                                    NUMBER(5)
+ FPHONE                          NOT NULL CHAR(10)
+ FRANK                           NOT NULL CHAR(4)
+ FPIN                            NOT NULL CHAR(4)
+
+SQL> DESCRIBE LOCATION;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ LOCID                           NOT NULL NUMBER(5)
+ BLDG_CODE                       NOT NULL VARCHAR2(10)
+ ROOM                            NOT NULL VARCHAR2(6)
+ CAPAPCITY                       NOT NULL NUMBER(5)
+
+SQL> DESCRIBE TERM;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ TERMID                          NOT NULL NUMBER(2)
+ TDESC                           NOT NULL VARCHAR2(11)
+ STATUS                          NOT NULL VARCHAR2(6)
+
+SQL> DESCRIBE COURSE;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ CID                             NOT NULL NUMBER(3)
+ CALLID                          NOT NULL CHAR(7)
+ CNAME                           NOT NULL VARCHAR2(30)
+ CCREDIT                         NOT NULL CHAR(2)
+
+SQL> ALTER TABLE STUDENT
+  2  ADD(permadd VARCHAR2(30) CONSTRAINT student_permadd_nn NOT NULL,
+  3  permcity VARCHAR2(30) CONSTRAINT student_permcity_nn NOT NULL,
+  4  permstate CHAR(2) CONSTRAINT student_permstate_nn NOT NULL,
+  5  permzip VARCHAR2(9) CONSTRAINT student_permzip_nn NOT NULL,
+  6  permphone VARCHAR2(10) CONSTRAINT student_permphone);
+permphone VARCHAR2(10) CONSTRAINT student_permphone)
+                       *
+ERROR at line 6:
+ORA-02253: constraint specification not allowed here 
+
+
+SQL> 
+SQL> ALTER TABLE COURSE
+  2  MODIFY(ccredit CHAR(2) DEFAULT '3');
+
+Table altered.
+
+SQL> ALTER TABLE STUDENT
+  2  ADD(permadd VARCHAR2(30) CONSTRAINT student_permadd_nn NOT NULL,
+  3  permcity VARCHAR2(30) CONSTRAINT student_permcity_nn NOT NULL,
+  4  permstate CHAR(2) CONSTRAINT student_permstate_nn NOT NULL,
+  5  permzip VARCHAR2(9) CONSTRAINT student_permzip_nn NOT NULL,
+  6  permphone VARCHAR2(10));
+
+Table altered.
+
+SQL> SELECT table_name FROM user_tables;
+
+TABLE_NAME                                                                                          
+------------------------------                                                                      
+BACKORDER                                                                                           
+COLOR                                                                                               
+COURSE                                                                                              
+CUSTOMER                                                                                            
+CUST_ORDER                                                                                          
+FACULTY                                                                                             
+INVENTORY                                                                                           
+ITEM                                                                                                
+LOCATION                                                                                            
+ORDERLINE                                                                                           
+ORDERSOURCE                                                                                         
+SHIPPING                                                                                            
+STUDENT                                                                                             
+TERM                                                                                                
+
+14 rows selected.
+
+SQL> 
+SQL> DESCRIBE STUDENT;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ SID                             NOT NULL NUMBER(4)
+ SLNAME                          NOT NULL VARCHAR2(20)
+ SFNAME                          NOT NULL VARCHAR2(20)
+ SMI                             NOT NULL CHAR(1)
+ SADD                            NOT NULL VARCHAR2(20)
+ SCITY                           NOT NULL VARCHAR2(20)
+ SSTATE                          NOT NULL CHAR(2)
+ SZIP                            NOT NULL CHAR(5)
+ SPHONE                          NOT NULL CHAR(10)
+ SCLASS                          NOT NULL CHAR(2)
+ SDOB                            NOT NULL CHAR(8)
+ SPIN                            NOT NULL CHAR(4)
+ FID                                      NUMBER(3)
+ PERMADD                         NOT NULL VARCHAR2(30)
+ PERMCITY                        NOT NULL VARCHAR2(30)
+ PERMSTATE                       NOT NULL CHAR(2)
+ PERMZIP                         NOT NULL VARCHAR2(9)
+ PERMPHONE                                VARCHAR2(10)
+
+SQL> DESCRIBE FACULTY;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ FID                             NOT NULL NUMBER(3)
+ FLNAME                          NOT NULL VARCHAR2(20)
+ FFNAME                          NOT NULL VARCHAR2(20)
+ FMI                             NOT NULL CHAR(1)
+ LOCID                                    NUMBER(5)
+ FPHONE                          NOT NULL CHAR(10)
+ FRANK                           NOT NULL CHAR(4)
+ FPIN                            NOT NULL CHAR(4)
+
+SQL> DESCRIBE LOCATION;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ LOCID                           NOT NULL NUMBER(5)
+ BLDG_CODE                       NOT NULL VARCHAR2(10)
+ ROOM                            NOT NULL VARCHAR2(6)
+ CAPAPCITY                       NOT NULL NUMBER(5)
+
+SQL> DESCRIBE TERM;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ TERMID                          NOT NULL NUMBER(2)
+ TDESC                           NOT NULL VARCHAR2(11)
+ STATUS                          NOT NULL VARCHAR2(6)
+
+SQL> DESCRIBE COURSE;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ CID                             NOT NULL NUMBER(3)
+ CALLID                          NOT NULL CHAR(7)
+ CNAME                           NOT NULL VARCHAR2(30)
+ CCREDIT                         NOT NULL CHAR(2)
+
+SQL> 

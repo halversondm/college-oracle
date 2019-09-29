@@ -1,0 +1,5 @@
+CREATE TABLE LOCATION
+(locid NUMBER(5) CONSTRAINT location_locid_pk PRIMARY KEY,
+bldg_code VARCHAR(10) CONSTRAINT location_bldg_code_nn NOT NULL,
+room VARCHAR(6) CONSTRAINT location_room_nn NOT NULL,
+capapcity NUMBER(5) CONSTRAINT location_capacity_nn NOT NULL);

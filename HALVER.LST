@@ -1,0 +1,113 @@
+SELECT table_name FROM user_tables;
+
+TABLE_NAME                                                                                          
+------------------------------                                                                      
+LOCATION                                                                                            
+
+SQL> DESCRIBE LOCATION;
+ Name                            Null?    Type
+ ------------------------------- -------- ----
+ LOCID                           NOT NULL NUMBER(5)
+ BLDG_CODE                       NOT NULL VARCHAR2(10)
+ ROOM                            NOT NULL VARCHAR2(6)
+ CAPAPCITY                       NOT NULL NUMBER(5)
+
+SQL> SELECT CONSTRAINT_NAME FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'LOCATION'
+  2  ;
+
+CONSTRAINT_NAME                                                                                     
+------------------------------                                                                      
+LOCATION_BLDG_CODE_NN                                                                               
+LOCATION_ROOM_NN                                                                                    
+LOCATION_CAPACITY_NN                                                                                
+LOCATION_LOCID_PK                                                                                   
+
+SQL> ALTER TABLE LOCATION
+  2  ADD (seattype VARCHAR2(4) CONTRAINT location_seattype_nn NOT NULL);
+ADD (seattype VARCHAR2(4) CONTRAINT location_seattype_nn NOT NULL)
+                          *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ALTER TABLE LOCATION
+  2  ADD (seattype VARCHAR2(4) CONTRAINT location_seattype_nn NOT NULL);
+ADD (seattype VARCHAR2(4) CONTRAINT location_seattype_nn NOT NULL)
+                          *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ALTER TABLE LOCATION
+  2  ADD (seattype VARCHAR2(4) CONSTRAINT location_seattype_nn NOT NULL);
+
+Table altered.
+
+SQL> 
+SQL> ALTER TABLE LOCATION
+  2  MODIFY (seattype varchar2(6));
+
+Table altered.
+
+SQL> select constraint_name from user_constraints where table_name = 'LOCATION';
+
+CONSTRAINT_NAME                                                                                     
+------------------------------                                                                      
+LOCATION_SEATTYPE_NN                                                                                
+LOCATION_BLDG_CODE_NN                                                                               
+LOCATION_ROOM_NN                                                                                    
+LOCATION_CAPACITY_NN                                                                                
+LOCATION_LOCID_PK                                                                                   
+
+SQL> ALTER TABLE LOCATION
+  2  ADD CONSTRAINT location_bldg_code_cc
+  3  CHECK ((BLDG_CODE='CR') OR (BLDG_CODE='BUS') OR (BLDG_CODE='LIB'));
+
+Table altered.
+
+SQL> select constraint_name from user_constraints where table_name = 'LOCATION';
+
+CONSTRAINT_NAME                                                                                     
+------------------------------                                                                      
+LOCATION_SEATTYPE_NN                                                                                
+LOCATION_BLDG_CODE_CC                                                                               
+LOCATION_BLDG_CODE_NN                                                                               
+LOCATION_ROOM_NN                                                                                    
+LOCATION_CAPACITY_NN                                                                                
+LOCATION_LOCID_PK                                                                                   
+
+6 rows selected.
+
+SQL> ALTER TABLE LOCATION MODIFY
+  2  MODIFY (capacity default 35);
+MODIFY (capacity default 35)
+*
+ERROR at line 2:
+ORA-00904: invalid column name 
+
+
+SQL> ALTER TABLE LOCATION
+  2  MODIFY (CAPACITY DEFAULT 35);
+MODIFY (CAPACITY DEFAULT 35)
+        *
+ERROR at line 2:
+ORA-00904: invalid column name 
+
+
+SQL> alter table location
+  2  modify (capacity default 35);
+modify (capacity default 35)
+        *
+ERROR at line 2:
+ORA-00904: invalid column name 
+
+
+SQL> alter table location
+  2  modify (capacity default 35);
+modify (capacity default 35)
+        *
+ERROR at line 2:
+ORA-00904: invalid column name 
+
+
+SQL> 

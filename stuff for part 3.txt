@@ -1,0 +1,24 @@
+Database Project--part 3 
+
+Part 3--Queries
+
+Make sure you have used the revised Part 2 sheet before attempting this part of the
+project. 
+
+Create the text file that will execute each of the following queries. When the queries are run, generate
+a spool file that shows the SQL command and the results. 
+
+   1.Show the first and last names of all faculty who have a supervisor. 
+   2.Show a list of all courses from the catalog that are in the IS area. Use a wildcard. 
+   3.Show the course numbers and course descriptions for all courses being offered in Fall, 1999
+     without showing any duplicates. 
+   4.Show the average salary for all faculty members by department and rank. 
+   5.Show the course number and course description, faculty first and last names for all IS courses
+     being taught in Fall, 1999 that have a faculty member assigned. 
+   6.Show the major code and average GPA for each major. 
+   7.Show a count of the total number of courses and the number of distinct courses being taught
+     by year. 
+   8.Show the average GPA by major of only juniors and seniors who have a GPA above 3.1 
+   9.Show the highest and lowest GPAs in each major sorted by major name. 
+  10.Show what courses each student is enrolled in. Include student's name, course number, term
+     and year, room, and faculty member assigned. 
